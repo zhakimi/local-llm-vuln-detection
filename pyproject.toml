@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amd-vuln-scanner"
+version = "0.2.0"
+description = "Local LLM-powered vulnerability detection and security log analysis on AMD Ryzen AI hardware using Python and Ollama."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31",
+    "rich>=13.7",
+    "jsonschema>=4.20",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+bench = ["semgrep>=1.80"]
+
+[project.scripts]
+amd-vuln-scanner = "scanner.cli:main"
+
+[tool.setuptools]
+packages = ["scanner"]
+
+[tool.ruff]
+line-length = 130
+target-version = "py310"
+extend-exclude = ["sample_targets", "benchmarks/cases", "reports"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = [
+    "E501",   # long regex / prompt lines are clearer unwrapped
+    "UP007",  # keep Optional[...] for readability
+    "UP045",
+    "B008",
+    "UP035",  # typing.Callable/Iterable imports are fine on 3.10+
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["scanner", "benchmarks"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"

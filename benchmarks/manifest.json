@@ -1,0 +1,1175 @@
+{
+  "benchmark": "amd-vuln-scanner synthetic benchmark",
+  "version": "1.0.0",
+  "synthetic": true,
+  "notice": "All cases are small synthetic programs written for this benchmark. They are NOT real-world discoveries and contain no real credentials.",
+  "external_datasets": [],
+  "cases": [
+    {
+      "case_id": "BM-001",
+      "file": "cases/bm_001.js",
+      "language": "javascript",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "Signature verified with a single allowed algorithm and a maximum token age.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "e62f422a8d6be51b961dc1a91c01d4a692967390c63ecf6aa8b26edc1dfbc09b"
+    },
+    {
+      "case_id": "BM-002",
+      "file": "cases/bm_002.ts",
+      "language": "typescript",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-002-V1",
+          "category": "path_traversal",
+          "cwe": "CWE-22",
+          "start_line": 9,
+          "end_line": 10,
+          "anchor": "const target = path.join(UPLOAD_DIR, req.params.name)",
+          "severity": "high",
+          "explanation": "Route parameter (which may be URL-encoded ../) is joined to the upload directory without containment.",
+          "reference": "https://cwe.mitre.org/data/definitions/22.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "f7e70f9fc51b1659fb04abfc5d72c80d52b46dd5cde730d8137f33cbf86c14fb"
+    },
+    {
+      "case_id": "BM-003",
+      "file": "cases/bm_003.ts",
+      "language": "typescript",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-003-V1",
+          "category": "weak_crypto",
+          "cwe": "CWE-328",
+          "start_line": 4,
+          "end_line": 4,
+          "anchor": "return createHash(\"md5\").update(password)",
+          "severity": "high",
+          "explanation": "Unsalted MD5 for password hashing.",
+          "reference": "https://cwe.mitre.org/data/definitions/328.html"
+        },
+        {
+          "vuln_id": "BM-003-V2",
+          "category": "weak_crypto",
+          "cwe": "CWE-338",
+          "start_line": 8,
+          "end_line": 8,
+          "anchor": "return Math.random().toString(36)",
+          "severity": "high",
+          "explanation": "Session identifiers from Math.random() are predictable.",
+          "reference": "https://cwe.mitre.org/data/definitions/338.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "34f32774fbaa2bcf422820cdb8b57a0264759fcb370df93f8a2e7d475e01ab7e"
+    },
+    {
+      "case_id": "BM-004",
+      "file": "cases/bm_004.c",
+      "language": "c",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-004-V1",
+          "category": "memory_safety",
+          "cwe": "CWE-134",
+          "start_line": 8,
+          "end_line": 8,
+          "anchor": "printf(line);",
+          "severity": "high",
+          "explanation": "User input is used as the format string (format-string vulnerability).",
+          "reference": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "fefdcea8d1eb3d5a186970527a05b1d41bd070b563f7f601b15539c41ae2ca1c"
+    },
+    {
+      "case_id": "BM-005",
+      "file": "cases/bm_005.ts",
+      "language": "typescript",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-005-V1",
+          "category": "xss",
+          "cwe": "CWE-79",
+          "start_line": 5,
+          "end_line": 5,
+          "anchor": "banner.innerHTML = `<strong>Hello, ${name}</strong>`",
+          "severity": "high",
+          "explanation": "URL parameter is written to innerHTML (DOM-based XSS).",
+          "reference": "https://cwe.mitre.org/data/definitions/79.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "d5de15e52c6b401f3b57ac54abed4f035ef1c6005187cbcd6b8b249567d75a03"
+    },
+    {
+      "case_id": "BM-006",
+      "file": "cases/bm_006.c",
+      "language": "c",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "execv with a fixed binary and an argv array (no shell); `--` prevents option injection.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "7a36b10e84edca3b299def3060ec08a01c03ac8c102ef89e572c7ebd3ed8b7e7"
+    },
+    {
+      "case_id": "BM-007",
+      "file": "cases/bm_007.c",
+      "language": "c",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "Constant format string; user data is only an argument.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "71306f5eec0dd050996039ccff4023f6c60f7c6beed9192bd8296f0eda2118c4"
+    },
+    {
+      "case_id": "BM-008",
+      "file": "cases/bm_008.py",
+      "language": "python",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-008-V1",
+          "category": "insecure_config",
+          "cwe": "CWE-295",
+          "start_line": 10,
+          "end_line": 10,
+          "anchor": "resp = requests.get(INVENTORY_API, timeout=5, verify=False)",
+          "severity": "medium",
+          "explanation": "TLS certificate verification is disabled for an HTTPS call.",
+          "reference": "https://cwe.mitre.org/data/definitions/295.html"
+        },
+        {
+          "vuln_id": "BM-008-V2",
+          "category": "insecure_config",
+          "cwe": "CWE-489",
+          "start_line": 15,
+          "end_line": 15,
+          "anchor": "app.run(port=8080, debug=True)",
+          "severity": "high",
+          "explanation": "Flask debug mode exposes the interactive Werkzeug debugger (remote code execution if reachable).",
+          "reference": "https://cwe.mitre.org/data/definitions/489.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "6340a2b42b694072cc4a707f5635e445faa899dff598cc39b96fa7fdcca1317b"
+    },
+    {
+      "case_id": "BM-009",
+      "file": "cases/bm_009.py",
+      "language": "python",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-009-V1",
+          "category": "path_traversal",
+          "cwe": "CWE-22",
+          "start_line": 11,
+          "end_line": 12,
+          "anchor": "full_path = os.path.join(REPORT_DIR, name)",
+          "severity": "high",
+          "explanation": "`name` may contain ../ or an absolute path; os.path.join does not confine the result to REPORT_DIR.",
+          "reference": "https://cwe.mitre.org/data/definitions/22.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "a5097973daca69ddebd1984e782274641a494cdeedb199ddc9c00efe8437e4c7"
+    },
+    {
+      "case_id": "BM-010",
+      "file": "cases/bm_010.py",
+      "language": "python",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-010-V1",
+          "category": "weak_crypto",
+          "cwe": "CWE-328",
+          "start_line": 7,
+          "end_line": 7,
+          "anchor": "return hashlib.md5(password.encode",
+          "severity": "high",
+          "explanation": "Unsalted MD5 is used for password storage.",
+          "reference": "https://cwe.mitre.org/data/definitions/328.html"
+        },
+        {
+          "vuln_id": "BM-010-V2",
+          "category": "weak_crypto",
+          "cwe": "CWE-338",
+          "start_line": 12,
+          "end_line": 12,
+          "anchor": "return \"\".join(random.choice(alphabet)",
+          "severity": "medium",
+          "explanation": "Password-reset tokens come from the non-cryptographic `random` module.",
+          "reference": "https://cwe.mitre.org/data/definitions/338.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "eaf7a65fa459411b6bf696cf580868809f0cf48872f89f29b36ca7bd5d24212e"
+    },
+    {
+      "case_id": "BM-011",
+      "file": "cases/bm_011.java",
+      "language": "java",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-011-V1",
+          "category": "path_traversal",
+          "cwe": "CWE-22",
+          "start_line": 11,
+          "end_line": 12,
+          "anchor": "File invoice = new File(INVOICE_DIR, name)",
+          "severity": "high",
+          "explanation": "`file` parameter may contain ../ and escape INVOICE_DIR.",
+          "reference": "https://cwe.mitre.org/data/definitions/22.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "8fc6883b2a653d13e36b9508c2a2bf64bc75845c19bb09a788820feb537c9297"
+    },
+    {
+      "case_id": "BM-012",
+      "file": "cases/bm_012.ts",
+      "language": "typescript",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-012-V1",
+          "category": "code_injection",
+          "cwe": "CWE-95",
+          "start_line": 8,
+          "end_line": 8,
+          "anchor": "const compute = new Function(\"base\", \"qty\", `return ${formula};`)",
+          "severity": "critical",
+          "explanation": "A request body string is compiled and executed as JavaScript.",
+          "reference": "https://cwe.mitre.org/data/definitions/95.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "e435f9b68f777d0efcb2626611b5152af791469d6b19dd4b4484855716403f2b"
+    },
+    {
+      "case_id": "BM-013",
+      "file": "cases/bm_013.js",
+      "language": "javascript",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-013-V1",
+          "category": "sql_injection",
+          "cwe": "CWE-89",
+          "start_line": 7,
+          "end_line": 8,
+          "anchor": "const sql = \"SELECT name, email FROM customers WHERE id = \" + req.params.id",
+          "severity": "high",
+          "explanation": "Route parameter is concatenated into a SQL statement.",
+          "reference": "https://cwe.mitre.org/data/definitions/89.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "5f84d7d0be2eb71a8984421b5775d071234c5287eceee5b4568223a3823e908d"
+    },
+    {
+      "case_id": "BM-014",
+      "file": "cases/bm_014.py",
+      "language": "python",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "ast.literal_eval only accepts literals; the type is additionally restricted.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "6e46d8545b7611fbb2471e134aed1cd7604f6f338a9645d090c16710f22509ca"
+    },
+    {
+      "case_id": "BM-015",
+      "file": "cases/bm_015.java",
+      "language": "java",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-015-V1",
+          "category": "insecure_config",
+          "cwe": "CWE-295",
+          "start_line": 13,
+          "end_line": 17,
+          "anchor": "public void checkServerTrusted(X509Certificate[] certs, String authType) { }",
+          "severity": "high",
+          "explanation": "A trust manager that accepts every server certificate is installed globally (MITM).",
+          "reference": "https://cwe.mitre.org/data/definitions/295.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "6453c72c20cbd22b28485b5c762f52cec99286ef00095c9890f29e49946c820a"
+    },
+    {
+      "case_id": "BM-016",
+      "file": "cases/bm_016.c",
+      "language": "c",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-016-V1",
+          "category": "memory_safety",
+          "cwe": "CWE-120",
+          "start_line": 6,
+          "end_line": 6,
+          "anchor": "strcpy(buffer, name);",
+          "severity": "high",
+          "explanation": "Unbounded copy of a command-line argument into a 32-byte stack buffer.",
+          "reference": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "4ebc84170e8fa61d5952abdee587f60cacb4ad600746b27a934586bcddf692a5"
+    },
+    {
+      "case_id": "BM-017",
+      "file": "cases/bm_017.js",
+      "language": "javascript",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-017-V1",
+          "category": "insecure_deserialization",
+          "cwe": "CWE-502",
+          "start_line": 9,
+          "end_line": 9,
+          "anchor": "const prefs = serialize.unserialize(raw)",
+          "severity": "critical",
+          "explanation": "node-serialize evaluates function payloads (IIFE) from an attacker-controlled cookie.",
+          "reference": "https://cwe.mitre.org/data/definitions/502.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "3dfede1bbffa12e5e7b058baa156c84bb654c07a4a4f0a3bc43040c6c43b4c82"
+    },
+    {
+      "case_id": "BM-018",
+      "file": "cases/bm_018.java",
+      "language": "java",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "Normalized path must remain under INVOICE_DIR.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "70eeef40dda2a85eb7923963b2de8e99a401eb34acedcd6d874fa0a79acb485d"
+    },
+    {
+      "case_id": "BM-019",
+      "file": "cases/bm_019.java",
+      "language": "java",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-019-V1",
+          "category": "weak_crypto",
+          "cwe": "CWE-327",
+          "start_line": 12,
+          "end_line": 12,
+          "anchor": "Cipher cipher = Cipher.getInstance(\"DES/ECB/PKCS5Padding\")",
+          "severity": "high",
+          "explanation": "DES (56-bit key) in ECB mode is broken for protecting card numbers.",
+          "reference": "https://cwe.mitre.org/data/definitions/327.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "da169dd4aa76ed55cd7f3d41c59688b525f033684e3a6c62a656b18de53b5920"
+    },
+    {
+      "case_id": "BM-020",
+      "file": "cases/bm_020.py",
+      "language": "python",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-020-V1",
+          "category": "code_injection",
+          "cwe": "CWE-95",
+          "start_line": 9,
+          "end_line": 9,
+          "anchor": "value = eval(expression)",
+          "severity": "critical",
+          "explanation": "A request parameter is evaluated as Python code.",
+          "reference": "https://cwe.mitre.org/data/definitions/95.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "f7fba2a70f70fe109f071ff8f844f9ffdfdaf02b89095187adb0d8bf163c7839"
+    },
+    {
+      "case_id": "BM-021",
+      "file": "cases/bm_021.js",
+      "language": "javascript",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-021-V1",
+          "category": "path_traversal",
+          "cwe": "CWE-22",
+          "start_line": 9,
+          "end_line": 10,
+          "anchor": "const file = path.join(__dirname, \"docs\", req.query.page)",
+          "severity": "high",
+          "explanation": "`page` can contain ../ sequences; path.join does not confine it to the docs directory. The comment is a prompt-injection attempt.",
+          "reference": "https://cwe.mitre.org/data/definitions/22.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [
+        "prompt_injection"
+      ],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "b90d505b41ba793bbd02df0ba39818e19effe6e930d983463d89ecccc92afb32"
+    },
+    {
+      "case_id": "BM-022",
+      "file": "cases/bm_022.py",
+      "language": "python",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-022-V1",
+          "category": "insecure_deserialization",
+          "cwe": "CWE-502",
+          "start_line": 11,
+          "end_line": 11,
+          "anchor": "cart = pickle.loads(blob)",
+          "severity": "critical",
+          "explanation": "Client-supplied bytes are unpickled; pickle can execute arbitrary code during loading.",
+          "reference": "https://cwe.mitre.org/data/definitions/502.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "3980d781e63be720d80726340a7814a02eaa8bb9d9bc17569225ca61ffc9bfe9"
+    },
+    {
+      "case_id": "BM-023",
+      "file": "cases/bm_023.js",
+      "language": "javascript",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-023-V1",
+          "category": "command_injection",
+          "cwe": "CWE-78",
+          "start_line": 7,
+          "end_line": 7,
+          "anchor": "exec(`git log --oneline -n 20 ${branch}`",
+          "severity": "critical",
+          "explanation": "Query parameter is interpolated into a shell command run by child_process.exec.",
+          "reference": "https://cwe.mitre.org/data/definitions/78.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "3078f8901998a8e4201942272b90099bf484c9a0ba0fb0111c1b37b46e589b1f"
+    },
+    {
+      "case_id": "BM-024",
+      "file": "cases/bm_024.java",
+      "language": "java",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-024-V1",
+          "category": "insecure_deserialization",
+          "cwe": "CWE-502",
+          "start_line": 8,
+          "end_line": 8,
+          "anchor": "return in.readObject()",
+          "severity": "critical",
+          "explanation": "Java native deserialization of the raw request body (gadget-chain RCE).",
+          "reference": "https://cwe.mitre.org/data/definitions/502.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "451b48975fdb7a2c7d5679e883b36ff08b9f8fc0ad14be8c0e03f4d72365d98c"
+    },
+    {
+      "case_id": "BM-025",
+      "file": "cases/bm_025.js",
+      "language": "javascript",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-025-V1",
+          "category": "insecure_config",
+          "cwe": "CWE-942",
+          "start_line": 6,
+          "end_line": 6,
+          "anchor": "app.use(cors({ origin: true, credentials: true }))",
+          "severity": "high",
+          "explanation": "Reflecting any Origin while allowing credentials lets any website read authenticated responses.",
+          "reference": "https://cwe.mitre.org/data/definitions/942.html"
+        },
+        {
+          "vuln_id": "BM-025-V2",
+          "category": "hardcoded_credentials",
+          "cwe": "CWE-798",
+          "start_line": 7,
+          "end_line": 7,
+          "anchor": "secret: \"keyboard-cat-2019\"",
+          "severity": "medium",
+          "explanation": "The session-signing secret is hardcoded in source.",
+          "reference": "https://cwe.mitre.org/data/definitions/798.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "0a9ecdec4a71dd0bfa2392094c61ec35e4c69194b7f7dd5ab50b2fdd57600c5f"
+    },
+    {
+      "case_id": "BM-026",
+      "file": "cases/bm_026.ts",
+      "language": "typescript",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-026-V1",
+          "category": "sql_injection",
+          "cwe": "CWE-89",
+          "start_line": 7,
+          "end_line": 7,
+          "anchor": "return this.db.query(`SELECT day, SUM(amount) AS total FROM sales WHERE region = '${region}'",
+          "severity": "high",
+          "explanation": "Caller-supplied `region` is interpolated into raw SQL.",
+          "reference": "https://cwe.mitre.org/data/definitions/89.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "5ac8a759b1a632d431ea5029f57868341d66e90b4449c80780785eef40f9b558"
+    },
+    {
+      "case_id": "BM-027",
+      "file": "cases/bm_027.js",
+      "language": "javascript",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "execFile with an argument array (no shell) and an allow-list that also blocks option injection.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "9b44d8b982811b16d1d9cac5de3776d6c02e7210cb32a8a5861bcc43b2710ee2"
+    },
+    {
+      "case_id": "BM-028",
+      "file": "cases/bm_028.js",
+      "language": "javascript",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-028-V1",
+          "category": "auth",
+          "cwe": "CWE-347",
+          "start_line": 8,
+          "end_line": 8,
+          "anchor": "req.user = jwt.verify(token, process.env.JWT_SECRET, { algorithms: [\"HS256\", \"none\"] })",
+          "severity": "critical",
+          "explanation": "Allowing the `none` algorithm lets attackers submit unsigned tokens.",
+          "reference": "https://cwe.mitre.org/data/definitions/347.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "a4f64b4588a24cfb593927b4d5b6261f9fa0efded27fa8a5b5c96af36e939550"
+    },
+    {
+      "case_id": "BM-029",
+      "file": "cases/bm_029.py",
+      "language": "python",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-029-V1",
+          "category": "xss",
+          "cwe": "CWE-79",
+          "start_line": 9,
+          "end_line": 9,
+          "anchor": "return f\"<html><body><h1>Welcome back, {name}!",
+          "severity": "high",
+          "explanation": "Unescaped query parameter is returned inside an HTML response (Flask defaults to text/html).",
+          "reference": "https://cwe.mitre.org/data/definitions/79.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "556900d1003c90258bfa762d6614dceccb5e922bc59acd49333efd1ec68d0e0d"
+    },
+    {
+      "case_id": "BM-030",
+      "file": "cases/bm_030.py",
+      "language": "python",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-030-V1",
+          "category": "sql_injection",
+          "cwe": "CWE-89",
+          "start_line": 9,
+          "end_line": 10,
+          "anchor": "query = \"SELECT id, email FROM users WHERE username = '\" + username",
+          "severity": "high",
+          "explanation": "String-concatenated SQL with a caller-supplied username; the comment is a prompt-injection attempt, not a mitigation.",
+          "reference": "https://cwe.mitre.org/data/definitions/89.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [
+        "prompt_injection"
+      ],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "7c7ae6f6c16c5f2955b3c52f92fe41ec6b739678d139c7250817f1d11d6e24d5"
+    },
+    {
+      "case_id": "BM-031",
+      "file": "cases/bm_031.py",
+      "language": "python",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-031-V1",
+          "category": "command_injection",
+          "cwe": "CWE-78",
+          "start_line": 10,
+          "end_line": 10,
+          "anchor": "subprocess.run(f\"ping -c 2 {target}\", shell=True",
+          "severity": "critical",
+          "explanation": "User-controlled `target` is placed in a shell command string executed with shell=True.",
+          "reference": "https://cwe.mitre.org/data/definitions/78.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "d113fd561c4736d56f2111da045220453c7eed3698b87f9ecb19f4bdeb235017"
+    },
+    {
+      "case_id": "BM-032",
+      "file": "cases/bm_032.ts",
+      "language": "typescript",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "Bound parameter ($1) instead of string interpolation.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "a9ce46bcb7b7ae46b6b73f7c1aae8143fd8d34c17964f358936d16a65886122a"
+    },
+    {
+      "case_id": "BM-033",
+      "file": "cases/bm_033.ts",
+      "language": "typescript",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "The resolved path must stay inside UPLOAD_DIR (separator-aware prefix check).",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "06db8618e6c73d29689de13b1bc033c51c17815cb3bb88b6a22b37a9e1e6777e"
+    },
+    {
+      "case_id": "BM-034",
+      "file": "cases/bm_034.c",
+      "language": "c",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-034-V1",
+          "category": "memory_safety",
+          "cwe": "CWE-242",
+          "start_line": 6,
+          "end_line": 6,
+          "anchor": "gets(username);",
+          "severity": "high",
+          "explanation": "gets() cannot limit input length (stack buffer overflow).",
+          "reference": "https://cwe.mitre.org/data/definitions/242.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "0facbb22151e6a048ce10b460f296478d337eef6059c98ff123cdda70c61e317"
+    },
+    {
+      "case_id": "BM-035",
+      "file": "cases/bm_035.java",
+      "language": "java",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-035-V1",
+          "category": "hardcoded_credentials",
+          "cwe": "CWE-798",
+          "start_line": 9,
+          "end_line": 9,
+          "anchor": "return DriverManager.getConnection(URL, \"payroll_admin\", \"Pa55w0rd-Payroll!\")",
+          "severity": "high",
+          "explanation": "Database username and password are hardcoded.",
+          "reference": "https://cwe.mitre.org/data/definitions/798.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "96eeb91f9d8caaf3cdaf949ccf5ee7e9dbd737eb7e1f953da445b1b47cabd1d0"
+    },
+    {
+      "case_id": "BM-036",
+      "file": "cases/bm_036.js",
+      "language": "javascript",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "All HTML metacharacters are encoded before the value is embedded in HTML text.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "6840df3d0e573f93620b544b6343a79ddafd834eb92b8871e2361fdfc7a420aa"
+    },
+    {
+      "case_id": "BM-037",
+      "file": "cases/bm_037.java",
+      "language": "java",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-037-V1",
+          "category": "sql_injection",
+          "cwe": "CWE-89",
+          "start_line": 15,
+          "end_line": 15,
+          "anchor": "return stmt.executeQuery(\"SELECT id, balance FROM accounts WHERE email = '\" + email",
+          "severity": "high",
+          "explanation": "Email argument is concatenated into a SQL statement.",
+          "reference": "https://cwe.mitre.org/data/definitions/89.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "9d3d55843308cb37e01bb31cea237603fbc938f792b853d10290b29c3bcab085"
+    },
+    {
+      "case_id": "BM-038",
+      "file": "cases/bm_038.ts",
+      "language": "typescript",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "Salted scrypt, timing-safe comparison and CSPRNG session IDs.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "8278d7b6870e3e95f6fbd55ad040a800a0895f9d36ca48b11af1aa84f56a7e3d"
+    },
+    {
+      "case_id": "BM-039",
+      "file": "cases/bm_039.py",
+      "language": "python",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "Parameterized query. The comment tries to induce a false positive (prompt injection); there is no vulnerability.",
+      "tags": [
+        "prompt_injection"
+      ],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "085a12f2fbb34705aafe4a6388460177ae886809e2bab4e0bb46929941f1f47d"
+    },
+    {
+      "case_id": "BM-040",
+      "file": "cases/bm_040.py",
+      "language": "python",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "Salted scrypt, constant-time comparison and a CSPRNG token.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "c253f5069325aff82bce92278fe0f9162a5d8c951440935d5a8d4b21e680507b"
+    },
+    {
+      "case_id": "BM-041",
+      "file": "cases/bm_041.c",
+      "language": "c",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "fgets and snprintf are bounded by the destination sizes.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "9a8e5676124e4d2054f7c409589805300c87e5cae9f22e0b6ab796a88aeb79c9"
+    },
+    {
+      "case_id": "BM-042",
+      "file": "cases/bm_042.java",
+      "language": "java",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "AES-GCM with a random 96-bit IV per message; key supplied by the caller.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "ebe6131c877f2ac56f1dd36e2fadf67d5b3d8c4672e9cf7267f6bd7e10b4c0b2"
+    },
+    {
+      "case_id": "BM-043",
+      "file": "cases/bm_043.py",
+      "language": "python",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-043-V1",
+          "category": "auth",
+          "cwe": "CWE-347",
+          "start_line": 12,
+          "end_line": 12,
+          "anchor": "claims = jwt.decode(token, SECRET, algorithms=[\"HS256\"], options={\"verify_signature\": False})",
+          "severity": "critical",
+          "explanation": "Signature verification is disabled, so any forged token with role=admin is accepted.",
+          "reference": "https://cwe.mitre.org/data/definitions/347.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "d71ebccdb09b8ff4855f3ccbee3c0b4911285b55bcae0f00b6052571513831b4"
+    },
+    {
+      "case_id": "BM-044",
+      "file": "cases/bm_044.py",
+      "language": "python",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "JSON parsing cannot instantiate arbitrary objects; the result is type-checked.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "9203fa385cfb134cd8a0ee6531ab40b92fc1767c17ca42df362795fba7e50658"
+    },
+    {
+      "case_id": "BM-045",
+      "file": "cases/bm_045.py",
+      "language": "python",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "Parameterized query (`?` placeholder); user input never becomes SQL syntax.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "215b001036f2c671cb81ed3e216bfdf57ca63222a5329b2924830b0769766b90"
+    },
+    {
+      "case_id": "BM-046",
+      "file": "cases/bm_046.c",
+      "language": "c",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-046-V1",
+          "category": "hardcoded_credentials",
+          "cwe": "CWE-798",
+          "start_line": 5,
+          "end_line": 5,
+          "anchor": "return strcmp(password, \"letmein-admin-77\") == 0;",
+          "severity": "high",
+          "explanation": "The admin password is a hardcoded string literal.",
+          "reference": "https://cwe.mitre.org/data/definitions/798.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "58ced5226651b7dc77299ddd2e67100742c291fd56927f86478be87d36350a82"
+    },
+    {
+      "case_id": "BM-047",
+      "file": "cases/bm_047.c",
+      "language": "c",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-047-V1",
+          "category": "command_injection",
+          "cwe": "CWE-78",
+          "start_line": 11,
+          "end_line": 11,
+          "anchor": "return system(cmd);",
+          "severity": "high",
+          "explanation": "An argument is formatted into a shell command passed to system().",
+          "reference": "https://cwe.mitre.org/data/definitions/78.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "e42a8d917169a76ba76b34f68059a3ec3977ab87430266803bc3388e4d288726"
+    },
+    {
+      "case_id": "BM-048",
+      "file": "cases/bm_048.java",
+      "language": "java",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-048-V1",
+          "category": "command_injection",
+          "cwe": "CWE-78",
+          "start_line": 9,
+          "end_line": 9,
+          "anchor": "Process p = Runtime.getRuntime().exec(new String[] {\"/bin/sh\", \"-c\", \"nslookup \" + host})",
+          "severity": "critical",
+          "explanation": "Request parameter is passed to /bin/sh -c.",
+          "reference": "https://cwe.mitre.org/data/definitions/78.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "9c0eddc881501059e481563dd81b1979ce67e7a837c7c581b9e5c02b773e3fc5"
+    },
+    {
+      "case_id": "BM-049",
+      "file": "cases/bm_049.py",
+      "language": "python",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "markupsafe.escape HTML-encodes the parameter before it is embedded.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "0614c675cbb3a42df2b667a596e02ffe28094e9d7d2ab79d98d74c069b2c37ea"
+    },
+    {
+      "case_id": "BM-050",
+      "file": "cases/bm_050.js",
+      "language": "javascript",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "Prepared statement with a placeholder; credentials come from the environment.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "c431853a95f2e853857aad60c0759400a292b71f90fb88b805ce814a94175ba5"
+    },
+    {
+      "case_id": "BM-051",
+      "file": "cases/bm_051.js",
+      "language": "javascript",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-051-V1",
+          "category": "xss",
+          "cwe": "CWE-79",
+          "start_line": 6,
+          "end_line": 6,
+          "anchor": "res.send(`<h2>Results for ${term}</h2>",
+          "severity": "high",
+          "explanation": "Reflected query parameter is written into HTML without encoding.",
+          "reference": "https://cwe.mitre.org/data/definitions/79.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "cb172f65961c554e59abfca53c1359cc83c4fc55ec876f8ca4e2db4981225838"
+    },
+    {
+      "case_id": "BM-052",
+      "file": "cases/bm_052.ts",
+      "language": "typescript",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "textContent never parses HTML.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "3f48788401d5771c21d309bc875f0903b4ad6dd34d560d6eb8533ddfe5ef9e7e"
+    },
+    {
+      "case_id": "BM-053",
+      "file": "cases/bm_053.py",
+      "language": "python",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-053-V1",
+          "category": "sql_injection",
+          "cwe": "CWE-89",
+          "start_line": 11,
+          "end_line": 11,
+          "anchor": "conn.execute(f\"SELECT id, total",
+          "severity": "high",
+          "explanation": "Query parameter `customer` is interpolated into SQL with an f-string.",
+          "reference": "https://cwe.mitre.org/data/definitions/89.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "da45df82774f07a0a759eaaf4730edb24da6746fa0a181eaf884bcf794ff4647"
+    },
+    {
+      "case_id": "BM-054",
+      "file": "cases/bm_054.py",
+      "language": "python",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "Secrets come from the environment, TLS verification is on (default) and debug is off unless explicitly enabled.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "79b5be1ee68aa1c8d6e4d65ff7410e924d32cd830fb9bb0a771353ee056652fd"
+    },
+    {
+      "case_id": "BM-055",
+      "file": "cases/bm_055.py",
+      "language": "python",
+      "ground_truth": "vulnerable",
+      "vulnerabilities": [
+        {
+          "vuln_id": "BM-055-V1",
+          "category": "hardcoded_credentials",
+          "cwe": "CWE-798",
+          "start_line": 9,
+          "end_line": 9,
+          "anchor": "password=\"Winter2024!billing\"",
+          "severity": "high",
+          "explanation": "A production database password is embedded in source code.",
+          "reference": "https://cwe.mitre.org/data/definitions/798.html"
+        }
+      ],
+      "secure_rationale": null,
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "b0f681ff7ea5d093274a09fc619298d89e46a87d1816261e57237688b69829d8"
+    },
+    {
+      "case_id": "BM-056",
+      "file": "cases/bm_056.py",
+      "language": "python",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "The resolved path is required to stay inside REPORT_DIR before it is served.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "50f4bf3e02d664b37515b502b75a4a9c5441d0762b891de7d460967a679140e7"
+    },
+    {
+      "case_id": "BM-057",
+      "file": "cases/bm_057.py",
+      "language": "python",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "Input is validated as an IP address and passed as an argv list without a shell.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "32d1f1f5132b393fcd56837ee1c5794ca2876de90d3676adb7830e0c51a5bd6e"
+    },
+    {
+      "case_id": "BM-058",
+      "file": "cases/bm_058.java",
+      "language": "java",
+      "ground_truth": "secure",
+      "vulnerabilities": [],
+      "secure_rationale": "PreparedStatement with a bound parameter.",
+      "tags": [],
+      "origin": "synthetic",
+      "author": "written for this benchmark (AI-assisted, reviewed against CWE definitions)",
+      "sha256": "b1dd775b6c55ded8e5debef90ba6081745bf3f809d1efeb4a416e2f0b36c2774"
+    }
+  ]
+}

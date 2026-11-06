@@ -1,0 +1,4 @@
+# Runtime dependencies (argparse, json, logging are in the standard library)
+requests>=2.31,<3
+rich>=13.7
+jsonschema>=4.20,<5

@@ -1,0 +1,5 @@
+# Tests and linting (CI)
+pytest>=8
+ruff>=0.6
+# Benchmark baseline only (optional; downloads Semgrep registry rules when run)
+# semgrep>=1.80

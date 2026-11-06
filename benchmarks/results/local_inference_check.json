@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-11-06T11:28:38+00:00",
+  "target": "sample_targets/vulnerable_app.py",
+  "findings": 14,
+  "socket_connects": [
+    "127.0.0.1:11434",
+    "::1:11434"
+  ],
+  "dns_lookups": [
+    "localhost"
+  ],
+  "non_loopback_connects": [],
+  "http_endpoints": {
+    "GET /api/tags": 2,
+    "POST /api/generate": 25,
+    "POST /api/show": 1,
+    "GET /api/version": 1
+  },
+  "generate_calls": 25,
+  "client_stats": {
+    "http_requests": 25,
+    "generations": 25,
+    "http_retries": 0,
+    "timeouts": 0,
+    "inference_seconds": 45.52504411301561
+  },
+  "model": {
+    "name": "llama3.2",
+    "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+    "quantization": "Q4_K_M",
+    "parameter_size": "3.2B",
+    "ollama_version": "0.40.15",
+    "options": {
+      "temperature": 0.1,
+      "num_ctx": 8192,
+      "num_predict": 2048
+    }
+  },
+  "passed": true,
+  "scope_note": "this checks the scanner process only. It cannot see what the Ollama\nserver itself does, or what other software on the machine (for example an\nAI coding assistant used during development) sends elsewhere."
+}

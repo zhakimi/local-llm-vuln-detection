@@ -1,0 +1,52 @@
+# --- Scan output (may contain snippets of scanned, possibly private, code/logs)
+reports/*
+!reports/.gitkeep
+
+# --- Private scan inputs: keep anything you scan for real out of the repo
+private/
+scan_inputs/
+*.local.log
+manual-review-packet*/
+
+# --- Credentials / secrets
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+credentials*.json
+secrets*.json
+
+# --- Model weights / large artifacts (never commit models)
+*.gguf
+*.safetensors
+*.bin
+*.onnx
+models/
+
+# --- Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# --- Benchmark scratch
+benchmarks/results/*.tmp.json
+benchmarks/.cache/
+
+# --- Editors / OS
+.vscode/
+.idea/
+.DS_Store
+benchmarks/results/run.log
