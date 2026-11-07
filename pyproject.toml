@@ -3,6 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
+license = { text = "MIT" }
 name = "amd-vuln-scanner"
 version = "0.2.0"
 description = "Local LLM-powered vulnerability detection and security log analysis on AMD Ryzen AI hardware using Python and Ollama."

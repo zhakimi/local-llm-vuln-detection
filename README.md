@@ -4,7 +4,7 @@
 ![Python](https://img.shields.io/badge/python-3.10%E2%80%933.13-blue?logo=python&logoColor=white)
 ![Inference](https://img.shields.io/badge/inference-local%20Ollama-black)
 ![Hardware](https://img.shields.io/badge/tested%20on-AMD%20Ryzen%20AI%20MAX%2B%20395-ED1C24)
-![License](https://img.shields.io/badge/license-TBD-lightgrey)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 **Local LLM-powered vulnerability detection and security log analysis on AMD Ryzen AI hardware, using Python and Ollama.**
 
@@ -303,8 +303,8 @@ Measured on 58 synthetic files / 39 labeled vulnerabilities, strict matching, 3 
 
 ## License and acknowledgments
 
-License: **to be decided by the repository owner** (MIT recommended; see
-the repository setup notes).
+Code in this repository is released under the [MIT License](LICENSE). The model
+weights are not included and remain under their own licenses.
 
 * [Ollama](https://ollama.com) and Meta's [Llama 3.2](https://www.llama.com/) (Llama 3.2 Community License) for local inference.
 * [Semgrep](https://semgrep.dev) OSS and its registry rules, used as the static-analysis baseline (rules are not redistributed here).
