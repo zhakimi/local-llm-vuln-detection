@@ -1,6 +1,6 @@
 # amd-vuln-scanner
 
-[![CI](https://github.com/OWNER/amd-vuln-scanner/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/amd-vuln-scanner/actions/workflows/ci.yml)
+[![CI](https://github.com/zhakimi/amd-vuln-scanner/actions/workflows/ci.yml/badge.svg)](https://github.com/zhakimi/amd-vuln-scanner/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.10%E2%80%933.13-blue?logo=python&logoColor=white)
 ![Inference](https://img.shields.io/badge/inference-local%20Ollama-black)
 ![Hardware](https://img.shields.io/badge/tested%20on-AMD%20Ryzen%20AI%20MAX%2B%20395-ED1C24)
@@ -95,7 +95,7 @@ tests/                pytest suite (Ollama mocked; runs in CI without a GPU)
 Requirements: Linux, Python ≥ 3.10, [Ollama](https://ollama.com).
 
 ```bash
-git clone https://github.com/OWNER/amd-vuln-scanner.git
+git clone https://github.com/zhakimi/amd-vuln-scanner.git
 cd amd-vuln-scanner
 python3 -m venv .venv && source .venv/bin/activate
 chmod +x setup.sh && ./setup.sh
